@@ -1,6 +1,7 @@
 #include "setup.h"
 #include "motor.h"
 #include "ultrasonic_sensor.h"
+#include "infrared_sensor.h"
 
 void setup() {
   Serial.begin(9600);
@@ -12,4 +13,6 @@ void setup() {
   //ultrasonic_sensor.h
   pinMode(TRIG_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
+  //infrared_sensor.h
+  pinMode(INFRARED_PIN, INPUT);
 }
