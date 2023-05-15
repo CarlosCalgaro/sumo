@@ -15,4 +15,7 @@ void setup() {
   pinMode(ECHO_PIN, INPUT);
   //infrared_sensor.h
   pinMode(INFRARED_PIN, INPUT);
+
+  enableMotors();
+  turnMotors(Direction::Forward);
 }
