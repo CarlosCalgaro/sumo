@@ -4,7 +4,7 @@
 
 enum Brightness {
   Dark = 1,
-  Light = 2
+  Light = 0
 };
 
 Brightness getBrightness();
