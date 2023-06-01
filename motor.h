@@ -1,5 +1,8 @@
-#include <Arduino.h>
 
+#ifndef __Motor_h
+#define __Motor_h
+
+#include <Arduino.h>
 #define LEFT_MOTOR 6
 #define RIGHT_MOTOR 11
 #define LEFT_MOTOR_DIRECTION  8
@@ -19,3 +22,4 @@ void turnBackwards();
 void turnForwards();
 void turnRight();
 void turnLeft();
+#endif

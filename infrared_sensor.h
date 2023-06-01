@@ -1,3 +1,6 @@
+
+#ifndef __Infrared_Sensor_h
+#define __Infrared_Sensor_h
 #include <Arduino.h>
 
 #define INFRARED_PIN 3
@@ -8,3 +11,4 @@ enum Brightness {
 };
 
 Brightness getBrightness();
+#endif
