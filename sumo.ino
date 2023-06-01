@@ -1,21 +1,24 @@
 #include "setup.h"
-#include "motor.h"
-#include "ultrasonic_sensor.h"
-#include "infrared_sensor.h"
+#include <infrared_sensor.h>
+#include <motor.h>
+#include <ultrasonic_sensor.h>
 
 bool FOUND = false;
 void loop() {
-
-  Brightness brightness = getBrightness();
-  Serial.println(brightness);
-  if(brightness == Brightness::Light){
-    turnBackwards();
-    delay(300);
-    turnLeft();
-    delay(500);
-    turnRight();
-    delay(100);
-  }else{
-    turnForwards();
+  switch(currentState){
+    case State::IDLE:
+      Serial.println("Idle");
+      break;
+    case State::SEARCHING:
+      Serial.println("Searching");
+      break;
+    case State::CHARGING:
+      Serial.println("Charging");
+      break;
+    case State::RECOVERING:
+      Serial.println("RECOVERING");
+      break;
+    default:
+      break;
   }
 }
