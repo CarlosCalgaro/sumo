@@ -1,3 +1,4 @@
+#include "Arduino.h"
 #include "infrared_sensor.h"
 #include "motor.h"
 #include "ultrasonic_sensor.h"
@@ -7,6 +8,7 @@ State currentState = State::SEARCHING;
 void setup() {
   Serial.begin(9600);
   attachInterrupt(digitalPinToInterrupt(INFRARED_PIN), handleOutOfArena, FALLING);
+  // attachInterrupt(digitalPinToInterrupt(INFRARED_PIN), handleInArena, RISING);
   // led
   pinMode(13, OUTPUT);
   //motor.h
@@ -19,9 +21,15 @@ void setup() {
   pinMode(ECHO_PIN, INPUT);
   //infrared_sensor.h
   pinMode(INFRARED_PIN, INPUT);
-  turnMotors(Direction::Forward);
+  // turnMotors(Direction::Forward);
+  enableMotors();
+  currentState = State::SEARCHING;
 }
-
+void handleInArena(){
+  // currentState = State::SEARCHING;
+}
 void handleOutOfArena(){
+  turnBackwards();
+  setMotorPower(255);
   currentState = State::RECOVERING;
 };

@@ -1,3 +1,4 @@
+#include "Arduino.h"
 #include "motor.h"
 
 void disableMotors(){
@@ -39,7 +40,10 @@ void turnRight(){
   digitalWrite(LEFT_MOTOR_DIRECTION, LOW);
   digitalWrite(RIGHT_MOTOR_DIRECTION, HIGH);
 }
-
+void setMotorPower(int power){
+  analogWrite(LEFT_MOTOR, power);
+  analogWrite(RIGHT_MOTOR, power);
+}
 void turnLeft(){
   digitalWrite(LEFT_MOTOR_DIRECTION, HIGH);
   digitalWrite(RIGHT_MOTOR_DIRECTION, LOW);

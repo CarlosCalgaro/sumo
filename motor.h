@@ -22,4 +22,5 @@ void turnBackwards();
 void turnForwards();
 void turnRight();
 void turnLeft();
+void setMotorPower(int power);
 #endif

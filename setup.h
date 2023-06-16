@@ -13,6 +13,7 @@ extern State currentState;
 
 void handleTargetFound();
 void handleOutOfArena();
+void handleInArena();
 void setup();
 
 #endif

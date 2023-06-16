@@ -10,8 +10,8 @@ float getDistance(){
   float duration = pulseIn(ECHO_PIN, HIGH);
   float distance = (duration*.0343)/2;  
 
-  Serial.print("Distance: ");  
-	Serial.println(distance);
+  // Serial.print("Distance: ");  
+	// Serial.println(distance);
 
   return distance;
 }
