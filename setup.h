@@ -4,7 +4,7 @@
 
 enum State{
   IDLE = 0,
-  SEARCHING = 1,
+  SEARCHING = 1, 
   CHARGING = 2,
   RECOVERING = 3,
 };

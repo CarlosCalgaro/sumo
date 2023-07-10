@@ -8,7 +8,6 @@ State currentState = State::SEARCHING;
 void setup() {
   Serial.begin(9600);
   attachInterrupt(digitalPinToInterrupt(INFRARED_PIN), handleOutOfArena, FALLING);
-  // attachInterrupt(digitalPinToInterrupt(INFRARED_PIN), handleInArena, RISING);
   // led
   pinMode(13, OUTPUT);
   //motor.h
@@ -25,11 +24,7 @@ void setup() {
   enableMotors();
   currentState = State::SEARCHING;
 }
-void handleInArena(){
-  // currentState = State::SEARCHING;
-}
+
 void handleOutOfArena(){
-  turnBackwards();
-  setMotorPower(255);
-  currentState = State::RECOVERING;
+    currentState = State::RECOVERING;
 };
